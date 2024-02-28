@@ -4,12 +4,12 @@ const { USER, PASSWORD, HOST, PORT, BDD, DATABASE_URL } = process.env;
 const FavoriteModel = require("./models/Favorite");
 const UserModel = require("./models/User");
 
-/* const sequelize = new Sequelize(
+const sequelize = new Sequelize(
   `postgres://${USER}:${PASSWORD}@${HOST}/${BDD}`,
   { logging: false, native: false }
-); */
+);
 
-const sequelize = new Sequelize(DATABASE_URL, { logging: false, native: false });
+//const sequelize = new Sequelize(DATABASE_URL, { logging: false, native: false });
 
 FavoriteModel(sequelize);
 UserModel(sequelize);
